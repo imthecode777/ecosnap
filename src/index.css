@@ -1,0 +1,215 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* EcoSnap Design System - Light, clean, eco-friendly theme inspired by WhatsApp UI
+All colors MUST be HSL for consistency.
+*/
+
+@layer base {
+  :root {
+    /* Core WhatsApp-inspired light theme */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 13%;
+
+    /* Card and surface colors */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 13%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 13%;
+
+    /* Primary green - eco-friendly accent */
+    --primary: 134 61% 41%;  /* #00C853 - Bright eco green */
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 134 45% 85%;  /* Light green for backgrounds */
+
+    /* Secondary grays for subtle elements */
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 13%;
+
+    /* Muted colors for less prominent content */
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+
+    /* Accent for highlights and interactions */
+    --accent: 134 45% 95%;  /* Very light green */
+    --accent-foreground: 0 0% 13%;
+
+    /* Status colors */
+    --destructive: 0 65% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 134 61% 41%;  /* Same as primary green */
+    --warning: 43 89% 38%;
+
+    /* Interface elements */
+    --border: 0 0% 90%;
+    --input: 0 0% 100%;
+    --ring: 134 61% 41%;
+
+    /* EcoSnap specific colors */
+    --eco-green: 134 61% 41%;       /* Main brand green */
+    --eco-green-light: 134 45% 85%; /* Light green backgrounds */
+    --eco-green-dark: 134 61% 35%;  /* Darker green for emphasis */
+    --eco-gray: 0 0% 96%;           /* Light gray backgrounds */
+    --eco-text: 0 0% 13%;           /* Dark text */
+    --eco-text-light: 0 0% 45%;     /* Light text */
+
+    /* Gradients for modern feel */
+    --gradient-eco: linear-gradient(135deg, hsl(var(--eco-green)) 0%, hsl(var(--eco-green-dark)) 100%);
+    --gradient-light: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--eco-gray)) 100%);
+
+    /* Shadows for depth */
+    --shadow-soft: 0 1px 3px 0 hsl(0 0% 0% / 0.1), 0 1px 2px 0 hsl(0 0% 0% / 0.06);
+    --shadow-medium: 0 4px 6px -1px hsl(0 0% 0% / 0.1), 0 2px 4px -1px hsl(0 0% 0% / 0.06);
+    --shadow-large: 0 10px 15px -3px hsl(0 0% 0% / 0.1), 0 4px 6px -2px hsl(0 0% 0% / 0.05);
+
+    /* Animation durations */
+    --duration-fast: 150ms;
+    --duration-normal: 300ms;
+    --duration-slow: 500ms;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer components {
+  /* EcoSnap component styles */
+  .eco-card {
+    @apply bg-card border border-border rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-300;
+  }
+  
+  .eco-button-primary {
+    @apply bg-primary text-primary-foreground px-6 py-3 rounded-xl font-medium shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105 active:scale-95;
+  }
+  
+  .eco-button-secondary {
+    @apply bg-accent text-accent-foreground border border-border px-6 py-3 rounded-xl font-medium hover:bg-secondary transition-colors duration-300;
+  }
+  
+  .eco-input {
+    @apply bg-input border border-border rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300;
+  }
+  
+  .eco-badge {
+    @apply bg-accent text-accent-foreground px-3 py-1 rounded-full text-sm font-medium;
+  }
+  
+  .eco-badge-success {
+    @apply bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium;
+}
+
+@layer utilities {
+  @keyframes confetti-fall {
+    0% {
+      transform: translateY(0) rotate(0deg) scale(1);
+      opacity: 1;
+    }
+    20% {
+      transform: translateY(20vh) rotate(180deg) scale(1.1) translateX(calc(var(--sway-direction, 1) * 30px));
+      opacity: 1;
+    }
+    40% {
+      transform: translateY(40vh) rotate(360deg) scale(0.95) translateX(calc(var(--sway-direction, 1) * -20px));
+      opacity: 0.95;
+    }
+    60% {
+      transform: translateY(60vh) rotate(540deg) scale(1.05) translateX(calc(var(--sway-direction, 1) * 25px));
+      opacity: 0.8;
+    }
+    80% {
+      transform: translateY(80vh) rotate(640deg) scale(0.9) translateX(calc(var(--sway-direction, 1) * -15px));
+      opacity: 0.5;
+    }
+    100% {
+      transform: translateY(105vh) rotate(720deg) scale(0.7) translateX(calc(var(--sway-direction, 1) * 10px));
+      opacity: 0;
+    }
+  }
+  
+  .animate-confetti-fall {
+    animation: confetti-fall ease-out forwards;
+  }
+  
+  @keyframes count-up {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.15);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .animate-count-up {
+    animation: count-up 0.4s ease-out;
+  }
+}
+}
