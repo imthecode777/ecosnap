@@ -112,17 +112,12 @@ const Layout = () => {
       <header className="hidden md:flex items-center justify-between px-6 py-4 border-b border-border/20 bg-card/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
         {/* Left - Logo */}
         <Link to="/" className="flex items-center space-x-3">
-         <img
-            src="./favicon.png"
-            alt="Eco Logo"
-            className="w-10 h-10"
-          />
-
+          <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center shadow-md">
+            <span className="text-xl font-bold text-primary-foreground">E</span>
+          </div>
           <div>
             <h1 className="text-xl font-bold text-foreground">EcoSnap</h1>
-            <p className="text-xs text-muted-foreground">
-              Sustainable Shopping
-            </p>
+            <p className="text-xs text-muted-foreground">Sustainable Shopping</p>
           </div>
         </Link>
 
